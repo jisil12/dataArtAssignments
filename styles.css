@@ -1,4 +1,4 @@
-/* ===== Base Styles ===== */
+
 :root {
   --primary-color: #4a90e2;
   --secondary-color: #f5f7fa;
@@ -20,7 +20,7 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Header ===== */
+
 header {
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@ header button {
   cursor: pointer;
 }
 
-/* ===== Timeline Layout ===== */
+
 #timeline {
   display: grid;
   grid-template-columns: 1fr;
@@ -74,9 +74,9 @@ header button {
   border-radius: 50%;
 }
 
-/* ===== Modal ===== */
+
 #modal {
-  display: none; /* Hidden by default */
+  display: none; 
   position: fixed;
   top: 0;
   left: 0;
@@ -95,9 +95,8 @@ header button {
   width: 90%;
 }
 
-/* ===== Breakpoints ===== */
 
-/* Tablet (768px - 1023px) */
+
 @media (min-width: 768px) and (max-width: 1023px) {
   #timeline {
     grid-template-columns: 1fr 1fr;
@@ -107,7 +106,7 @@ header button {
   }
 }
 
-/* Desktop (≥1024px) */
+
 @media (min-width: 1024px) {
   #timeline {
     grid-template-columns: repeat(3, 1fr);
