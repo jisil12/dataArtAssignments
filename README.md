@@ -1,3 +1,3 @@
-**Timeline App**
+Timeline App
 
-This is the first assignment with the basic template of the index.html created
+This is the second assignment, where the basic template is styled with a responsive layout, header design, event markers, and modal styles using CSS
