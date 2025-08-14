@@ -1,130 +1,129 @@
-// Timeline App
-let eventsData = [];
+// Embed events data directly
+const events = [
+  {
+    "year": 753,
+    "title": "Founding of Rome",
+    "description": "According to Roman mythology, the city of Rome was founded by Romulus and Remus. This legendary event marked the beginning of what would become one of history's greatest empires, influencing law, architecture, and governance across the world.",
+    "imageURL": "https://via.placeholder.com/400x250/95a5a6/ffffff?text=Founding+of+Rome+753+BC",
+    "category": "History"
+  },
+  {
+    "year": 1215,
+    "title": "Magna Carta Signed",
+    "description": "King John of England was forced to sign the Magna Carta, establishing the principle that everyone, including the king, was subject to the law. This document became a cornerstone of constitutional law and individual rights.",
+    "imageURL": "https://via.placeholder.com/400x250/7f8c8d/ffffff?text=Magna+Carta+1215",
+    "category": "Politics"
+  },
+  {
+    "year": 1347,
+    "title": "Black Death Pandemic",
+    "description": "The Black Death swept across Europe, Asia, and North Africa, killing an estimated 75-200 million people. This devastating pandemic reshaped European society, economy, and led to significant social and religious changes.",
+    "imageURL": "https://via.placeholder.com/400x250/2c3e50/ffffff?text=Black+Death+1347",
+    "category": "History"
+  },
+  {
+    "year": 1519,
+    "title": "Magellan's Voyage Begins",
+    "description": "Ferdinand Magellan embarked on the first expedition to circumnavigate the globe. Though he died during the journey, his crew completed the voyage, proving the Earth was round and opening new trade routes.",
+    "imageURL": "https://via.placeholder.com/400x250/34495e/ffffff?text=Magellan+Voyage+1519",
+    "category": "Exploration"
+  },
+  {
+    "year": 1687,
+    "title": "Newton's Principia Published",
+    "description": "Isaac Newton published 'Principia Mathematica,' laying the foundations of classical mechanics and universal gravitation. This work revolutionized our understanding of physics and mathematics, influencing scientific thought for centuries.",
+    "imageURL": "https://via.placeholder.com/400x250/bdc3c7/000000?text=Newton+Principia+1687",
+    "category": "Science"
+  },
+  {
+    "year": 1859,
+    "title": "Darwin's Origin of Species",
+    "description": "Charles Darwin published 'On the Origin of Species,' introducing the theory of evolution through natural selection. This groundbreaking work fundamentally changed our understanding of biology and human origins.",
+    "imageURL": "https://via.placeholder.com/400x250/95a5a6/ffffff?text=Darwin+Evolution+1859",
+    "category": "Science"
+  },
+  {
+    "year": 1945,
+    "title": "United Nations Established",
+    "description": "The United Nations was established to promote international cooperation and peace after World War II. This global organization continues to play a crucial role in diplomacy, humanitarian aid, and peacekeeping worldwide.",
+    "imageURL": "https://via.placeholder.com/400x250/7f8c8d/ffffff?text=United+Nations+1945",
+    "category": "Politics"
+  },
+  {
+    "year": 1991,
+    "title": "First Website Goes Live",
+    "description": "Tim Berners-Lee launched the first website at CERN, marking the birth of the World Wide Web. This innovation transformed global communication, commerce, and access to information, creating the digital age we know today.",
+    "imageURL": "https://via.placeholder.com/400x250/34495e/ffffff?text=First+Website+1991",
+    "category": "Technology"
+  }
+];
+
+// Reference DOM elements
 const timeline = document.getElementById('timeline');
 const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modal-image');
+const modalYear = document.getElementById('modal-year');
+const modalTitle = document.getElementById('modal-title');
+const modalCategory = document.getElementById('modal-category');
+const modalDescription = document.getElementById('modal-description');
+const closeBtn = document.getElementById('close-btn');
 
-// Category colors
+// Category colors mapping
 const categoryColors = {
-    'History': 'category-history',
-    'Politics': 'category-politics',
-    'Exploration': 'category-exploration',
-    'Science': 'category-science',
-    'Technology': 'category-technology'
+  "History": "category-history",
+  "Politics": "category-politics",
+  "Exploration": "category-exploration",
+  "Science": "category-science",
+  "Technology": "category-technology"
 };
 
-// Fetch events from JSON
-async function fetchEvents() {
-    try {
-        const response = await fetch('./data/events.json');
-        if (!response.ok) {
-            throw new Error('Failed to fetch events');
-        }
-        eventsData = await response.json();
-        renderTimeline();
-    } catch (error) {
-        console.error('Error loading events:', error);
-        showError();
-    }
-}
-
-// Show error message
-function showError() {
-    timeline.innerHTML = `
-        <div style="grid-column: 1/-1; background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
-            <h3 style="color: #e74c3c; margin-bottom: 1rem;">⚠️ Could not load events</h3>
-            <p>Make sure the data/events.json file exists and you're running a local server.</p>
-            <p><small>Try: <code>npx http-server</code></small></p>
-        </div>
-    `;
-}
-
-// Render timeline
-function renderTimeline() {
-    timeline.innerHTML = '';
-    
-    // Sort events by year
-    const sortedEvents = eventsData.sort((a, b) => a.year - b.year);
-    
-    sortedEvents.forEach((event) => {
-        const eventCard = createEventCard(event);
-        timeline.appendChild(eventCard);
-    });
-}
-
-// Create event card
-function createEventCard(event) {
+// Function to create event cards
+function renderEvents() {
+  events.forEach((event, index) => {
     const card = document.createElement('div');
     card.className = 'event-card';
-    
-    const categoryClass = categoryColors[event.category] || 'category-history';
-    
     card.innerHTML = `
-        <div class="event-image" style="background-image: url('${event.imageURL}')">
-            <div class="event-year-badge">${event.year}</div>
-        </div>
-        <div class="event-content">
-            <h3 class="event-title">${event.title}</h3>
-            <p class="event-description">${event.description.substring(0, 120)}...</p>
-            <div class="event-category ${categoryClass}">${event.category}</div>
-            <div class="category-text">Category: ${event.category}</div>
-        </div>
+      <div class="event-image" style="background-image: url('${event.imageURL}')">
+        <div class="event-year-badge">${event.year}</div>
+      </div>
+      <div class="event-content">
+        <h3 class="event-title">${event.title}</h3>
+        <p class="event-description">${event.description.substring(0, 100)}...</p>
+        <span class="event-category ${categoryColors[event.category] || 'category-history'}">${event.category}</span>
+      </div>
     `;
-    
-    // Add click handler
-    card.addEventListener('click', () => openModal(event));
-    
-    return card;
+
+    // Click to open modal
+    card.addEventListener('click', () => {
+      openModal(event);
+    });
+
+    timeline.appendChild(card);
+  });
 }
 
-// Open modal
+// Function to open modal
 function openModal(event) {
-    const modalImage = document.getElementById('modal-image');
-    const modalYear = document.getElementById('modal-year');
-    const modalTitle = document.getElementById('modal-title');
-    const modalCategory = document.getElementById('modal-category');
-    const modalDescription = document.getElementById('modal-description');
-    
-    // Set modal content
-    modalImage.style.backgroundImage = `url('${event.imageURL}')`;
-    modalYear.textContent = event.year;
-    modalTitle.textContent = event.title;
-    modalCategory.textContent = event.category;
-    modalDescription.textContent = event.description;
-    
-    // Apply category color
-    const categoryClass = categoryColors[event.category] || 'category-history';
-    modalCategory.className = `modal-category ${categoryClass}`;
-    
-    // Show modal
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
+  modal.style.display = 'block';
+  modalImage.style.backgroundImage = `url('${event.imageURL}')`;
+  modalYear.textContent = event.year;
+  modalTitle.textContent = event.title;
+  modalCategory.textContent = event.category;
+  modalCategory.className = 'modal-category ' + (categoryColors[event.category] || 'category-history');
+  modalDescription.textContent = event.description;
 }
 
 // Close modal
-function closeModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// Event listeners
-document.addEventListener('DOMContentLoaded', () => {
-    // Close button
-    document.getElementById('close-btn').addEventListener('click', closeModal);
-    
-    // Click outside modal to close
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // Escape key to close
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            closeModal();
-        }
-    });
-    
-    // Load events
-    fetchEvents();
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
+
+// Close modal if clicked outside content
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// Initialize
+renderEvents();
