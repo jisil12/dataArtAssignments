@@ -1,0 +1,58 @@
+[
+  {
+    "year": 476,
+    "title": "Fall of the Western Roman Empire",
+    "description": "The fall of the Western Roman Empire marked the end of ancient Rome and the start of the Middle Ages. Odoacer, a Germanic chieftain, deposed the last Roman Emperor Romulus Augustulus, ending over 1000 years of Roman rule in Western Europe.",
+    "imageURL": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop",
+    "category": "History"
+  },
+  {
+    "year": 1066,
+    "title": "Battle of Hastings",
+    "description": "William the Conqueror's Norman army defeated King Harold II's English forces at the Battle of Hastings. This victory led to the Norman Conquest of England and fundamentally changed English culture, language, and governance.",
+    "imageURL": "https://images.unsplash.com/photo-1594736797933-d0801ba2fe65?w=400&h=250&fit=crop",
+    "category": "History"
+  },
+  {
+    "year": 1440,
+    "title": "Invention of the Printing Press",
+    "description": "Johannes Gutenberg invents the movable type printing press, revolutionizing the spread of information and knowledge. This innovation made books more affordable and accessible, leading to increased literacy and the rapid spread of ideas during the Renaissance.",
+    "imageURL": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop",
+    "category": "Technology"
+  },
+  {
+    "year": 1492,
+    "title": "Columbus Reaches the Americas",
+    "description": "Christopher Columbus, sailing under the Spanish crown, reaches the Caribbean islands, initiating widespread European exploration and colonization of the Americas. This event marked the beginning of sustained contact between Europe and the Americas.",
+    "imageURL": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop",
+    "category": "Exploration"
+  },
+  {
+    "year": 1776,
+    "title": "American Declaration of Independence",
+    "description": "The thirteen American colonies declared independence from British rule, founding the United States of America. This document, primarily written by Thomas Jefferson, established principles of individual rights and democratic governance that influenced revolutions worldwide.",
+    "imageURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
+    "category": "Politics"
+  },
+  {
+    "year": 1879,
+    "title": "Edison's Light Bulb",
+    "description": "Thomas Edison successfully tests his incandescent light bulb, burning for 13.5 hours. This invention revolutionized daily life by extending productive hours beyond daylight and paved the way for the widespread adoption of electric power.",
+    "imageURL": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=250&fit=crop",
+    "category": "Technology"
+  },
+  {
+    "year": 1969,
+    "title": "Moon Landing",
+    "description": "Apollo 11 astronauts Neil Armstrong and Buzz Aldrin become the first humans to land on the Moon. Armstrong's famous words 'That's one small step for man, one giant leap for mankind' marked a pinnacle achievement in human space exploration.",
+    "imageURL": "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=400&h=250&fit=crop",
+    "category": "Science"
+  },
+  {
+    "year": 1989,
+    "title": "World Wide Web Invented",
+    "description": "Tim Berners-Lee invents the World Wide Web while working at CERN. His creation of HTML, HTTP, and URLs laid the foundation for the modern internet, revolutionizing communication, commerce, and access to information globally.",
+    "imageURL": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop",
+    "category": "Technology"
+  }
+]
