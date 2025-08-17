@@ -1,22 +1,13 @@
-# 📅 Timeline App – Task 3
+## Timeline App (TypeScript Refactor)
 
-**Overview:**  
-An interactive timeline built with **HTML, CSS, and vanilla JavaScript**. Users can view events and click on them to see details in a modal.
+A simple interactive timeline built with TypeScript, ES Modules, and strict typing.
 
-**Features:**  
-- Dynamic rendering of events from `events.json`.  
-- Event cards with hover effects.  
-- Modal popup showing title, year, category, description, and image.  
-- Close modal by clicking the **×** button or outside the modal.  
-- Responsive design for desktop and mobile.
+**Features**
 
-**Files:**  
-- `index.html` – Main page with timeline structure.  
-- `script.js` – Handles fetching, rendering, and modal interactivity.  
-- `events.json` – Contains at least 8 sample events.  
-- `styles.css` *(optional)* – Styling if separated from HTML.
+Event data modeled with TypeScript interfaces (TimelineEvent)
 
-**Instructions:**  
-Open `index.html` in a browser. Click event cards to view details.
+Modular code (renderer.ts, modal.ts, dom.ts, etc.)
 
+Clean separation of event data (data.ts or JSON)
 
+Compiles to dist/ with tsc
