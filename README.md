@@ -1,13 +1,4 @@
-## Timeline App (TypeScript Refactor)
+## Fifth Assignment
 
-A simple interactive timeline built with TypeScript, ES Modules, and strict typing.
-
-**Features**
-
-Event data modeled with TypeScript interfaces (TimelineEvent)
-
-Modular code (renderer.ts, modal.ts, dom.ts, etc.)
-
-Clean separation of event data (data.ts or JSON)
-
-Compiles to dist/ with tsc
+timeline-react is the react application delevoped as part of the fifth assignment.
+It can be run using npm run dev inside timeline-react folder.
