@@ -1,0 +1,15 @@
+{
+  "name": "timeline-app-ts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "serve": "http-server . -c-1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "http-server": "^14.1.1"
+  }
+}
